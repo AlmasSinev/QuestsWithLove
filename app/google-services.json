@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "556383362809",
+    "firebase_url": "https://questsmanager-b1fe1-default-rtdb.firebaseio.com",
+    "project_id": "questsmanager-b1fe1",
+    "storage_bucket": "questsmanager-b1fe1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:556383362809:android:fd76b9fe902bd297f5cc28",
+        "android_client_info": {
+          "package_name": "team.plassrever.questswithlove"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "556383362809-e9fmkii57266tq15a5fqik3vttdfel41.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "team.plassrever.questswithlove",
+            "certificate_hash": "4e78c2a4eb36d165ba8899274837fbbba3e71f66"
+          }
+        },
+        {
+          "client_id": "556383362809-m8cm9fpmspres8rdbf8o3d4g1jdfgb2u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_MCLWNmTkc0cCU5cTKB7Ttg3J6oVinWA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "556383362809-m8cm9fpmspres8rdbf8o3d4g1jdfgb2u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

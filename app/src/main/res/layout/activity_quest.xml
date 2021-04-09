@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QuestActivity"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/quest_image"
+        android:src="@drawable/quest_image"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/name_text"
+        android:text="Название квеста"
+        android:textSize="42sp"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="75dp"
+        app:layout_constraintLeft_toLeftOf="@+id/quest_image"
+        app:layout_constraintTop_toTopOf="@+id/quest_image"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/type_text"
+        android:text="Тип квеста"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        android:textColor="#fff"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintLeft_toLeftOf="@+id/quest_image"
+        app:layout_constraintTop_toBottomOf="@+id/name_text"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="25dp"
+        app:layout_constraintLeft_toLeftOf="@+id/quest_image"
+        app:layout_constraintTop_toBottomOf="@+id/type_text"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:orientation="vertical"
+            android:background="#2CFFFFFF"
+            android:layout_margin="3dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Игроков"
+                android:layout_marginTop="5dp"
+                android:textColor="#fff"
+                android:textAlignment="center"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="1-4"
+                android:textColor="#fff"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:id="@+id/text_in_image_amount" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:orientation="vertical"
+            android:background="#2CFFFFFF"
+            android:layout_margin="3dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Время"
+                android:layout_marginTop="5dp"
+                android:textColor="#fff"
+                android:textAlignment="center"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="80 мин"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:id="@+id/text_in_image_interval" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:orientation="vertical"
+            android:background="#2CFFFFFF"
+            android:layout_margin="3dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Цена"
+                android:layout_marginTop="5dp"
+                android:textColor="#fff"
+                android:textAlignment="center"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="3000р"
+                android:gravity="center"
+                android:textColor="#fff"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:id="@+id/text_in_image_cost" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:orientation="vertical"
+            android:background="#2CFFFFFF"
+            android:layout_margin="3dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cложность"
+                android:textColor="#fff"
+                android:layout_marginTop="5dp"
+                android:textAlignment="center"
+                android:textSize="12sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:id="@+id/diff_img_int_img_1"
+                    android:src="@drawable/ic_unlocked_no_bg"
+                    android:layout_margin="1dp"/>
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:id="@+id/diff_img_int_img_2"
+                    android:src="@drawable/ic_unlocked_no_bg"
+                    android:layout_margin="1dp"/>
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:id="@+id/diff_img_int_img_3"
+                    android:src="@drawable/ic_unlocked_no_bg"
+                    android:layout_margin="1dp"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="3dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:id="@+id/diff_img_int_img_4"
+                    android:src="@drawable/ic_unlocked_no_bg"
+                    android:layout_margin="1dp"/>
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:id="@+id/diff_img_int_img_5"
+                    android:src="@drawable/ic_unlocked_no_bg"
+                    android:layout_margin="1dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/condition_title_text"
+        android:text="Описание"
+        android:textSize="24sp"
+        android:textColor="#2C2C2C"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="@+id/quest_image"
+        app:layout_constraintTop_toBottomOf="@+id/quest_image"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/condition_text"
+        android:text="Бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-блаБла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-блаБла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла"
+        android:textSize="16sp"
+        android:textColor="#4E4E4E"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/condition_title_text"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/age_title_text"
+        android:text="Возраст:"
+        android:textSize="24sp"
+        android:textColor="#2C2C2C"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/condition_text"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/age_text"
+        android:text="От 16 лет:"
+        android:textSize="20sp"
+        android:textColor="#4E4E4E"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintLeft_toRightOf="@+id/age_title_text"
+        app:layout_constraintBottom_toBottomOf="@+id/age_title_text"
+        app:layout_constraintTop_toTopOf="@+id/age_title_text"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cost_title_text"
+        android:text="Цена:"
+        android:textSize="24sp"
+        android:textColor="#2C2C2C"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/age_title_text"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cost_text"
+        android:text="3000 рублей"
+        android:textSize="20sp"
+        android:textColor="#4E4E4E"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintLeft_toRightOf="@+id/cost_title_text"
+        app:layout_constraintBottom_toBottomOf="@+id/cost_title_text"
+        app:layout_constraintTop_toTopOf="@+id/cost_title_text"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/category_title_text"
+        android:text="Категории:"
+        android:textSize="20sp"
+        android:textColor="#2C2C2C"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/category_text"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/category_text"
+        android:text="Без категорий"
+        android:textSize="16sp"
+        android:textColor="#4E4E4E"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_buttons_linear"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/bottom_buttons_linear"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#FFF"
+            android:background="@color/colorAccent"
+            android:layout_margin="10dp"
+            android:text="Изменить"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            android:id="@+id/bottom_update_btn"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#FFF"
+            android:background="@color/colorAccent"
+            android:layout_margin="10dp"
+            android:text="Купить"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:id="@+id/bottom_buy_btn"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#FFF"
+            android:background="@color/colorAccent"
+            android:layout_margin="10dp"
+            android:text="Удалить"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            android:id="@+id/bottom_delete_btn"/>
+
+    </LinearLayout>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

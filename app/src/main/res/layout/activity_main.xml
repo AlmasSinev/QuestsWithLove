@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/banner_name"
+        android:id="@+id/banner"
+        android:layout_marginTop="170dp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textSize="50sp"
+        android:textColor="#9C27B0"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/banner_comment"
+        android:id="@+id/banner_comment"
+        android:textAlignment="center"
+        android:textStyle="italic"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/banner" />
+
+    <EditText
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/email_edit"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:hint="Введите Email"
+        android:inputType="textEmailAddress"
+        android:textSize="22sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/banner_comment" />
+
+    <EditText
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/password_edit"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:hint="Введите пароль"
+        android:inputType="textPassword"
+        android:textSize="22sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/email_edit" />
+
+    <Button
+        android:layout_width="380dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="22dp"
+        android:id="@+id/sign_in_btn"
+        android:text="Войти"
+        android:textColor="#ffffff"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:backgroundTint="#9C27B0"
+        android:background="#9C27B0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/password_edit" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/forgot_password_text"
+        android:text="Забыли пароль?"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="22dp"
+        android:layout_marginLeft="50dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sign_in_btn"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/register_text"
+        android:text="Регистрация"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="105dp"
+        app:layout_constraintLeft_toRightOf="@id/forgot_password_text"
+        app:layout_constraintTop_toTopOf="@id/forgot_password_text"/>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressbar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        tools:ignore="MissingConstrains"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
