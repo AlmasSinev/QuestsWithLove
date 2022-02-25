@@ -29,7 +29,7 @@ public class QuestActivity extends AppCompatActivity implements View.OnClickList
 
     String questName = "";
     int questId = -1;
-
+    // 5PYNKP2T42
     Button updateButton, deleteButton, buyButton;
 
     @Override
@@ -114,9 +114,9 @@ public class QuestActivity extends AppCompatActivity implements View.OnClickList
         cursor = database.rawQuery(sqlQuery, new String[]{String.valueOf(questId)});
 
         if (cursor.moveToFirst()){
-            int idName = cursor.getColumnIndex("catename");
             StringBuilder sb = new StringBuilder("");
             do {
+                int idName = cursor.getColumnIndex("catename");
                 sb.append(cursor.getString(idName) + "\t\t\t\t");
             } while (cursor.moveToNext());
 

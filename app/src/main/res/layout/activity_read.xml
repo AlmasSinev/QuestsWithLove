@@ -7,7 +7,6 @@
     android:orientation="vertical"
     tools:context=".ReadActivity">
 
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,16 +14,42 @@
         android:id="@+id/create_quest_head"
         android:textStyle="bold"
         android:textColor="#ffffff"
+        android:gravity="center"
         android:background="@color/colorAccent"
         android:paddingTop="7dp"
         android:paddingBottom="7dp"
         android:paddingRight="15dp"
         android:paddingLeft="15dp"
         android:textSize="30sp"
-        android:fontFamily="sans-serif-black"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:fontFamily="sans-serif-black" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="5dp">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Найти по названию"
+            android:id="@+id/read_search_edit_text"
+            android:layout_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/read_search_btn"
+            android:textStyle="bold"
+            android:backgroundTint="#9C27B0"
+            android:textColor="#ffffff"
+            android:text="Поиск"/>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -37,7 +62,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cортировать :"
+            android:text="Cортировать по:"
             android:layout_marginLeft="10dp"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -45,8 +70,9 @@
 
 
         <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:id="@+id/sort_radio_group"
             android:orientation="horizontal">
@@ -55,24 +81,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/radio_by_cost"
-                android:text="По стоимости"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="10dp"/>
+                android:layout_weight="1"
+                android:text=" стоимости"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/radio_by_diff"
-                android:text="По сложности"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"/>
+                android:layout_weight="1"
+                android:text=" сложности"/>
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/radio_by_age"
-                android:layout_marginLeft="10dp"
-                android:text="По возрасту"/>
+                android:layout_weight="1"
+                android:text=" возрасту"/>
 
         </RadioGroup>
 
@@ -82,7 +106,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/quests_list"
-        android:layout_margin="10dp"
         android:layout_weight="1"/>
 
     <Button
@@ -91,7 +114,7 @@
         android:id="@+id/create_quest_btn"
         android:text="Добавить квест"
         android:textColor="#ffffff"
-        android:textSize="16sp"
+        android:textSize="14sp"
         android:textStyle="bold"
         android:layout_margin="10dp"
         android:backgroundTint="#9C27B0"

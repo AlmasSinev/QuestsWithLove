@@ -28,7 +28,7 @@
         android:textColor="#fff"
         android:textStyle="bold"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintLeft_toLeftOf="@+id/quest_image"
         app:layout_constraintTop_toTopOf="@+id/quest_image"/>
 
@@ -48,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintLeft_toLeftOf="@+id/quest_image"
         app:layout_constraintTop_toBottomOf="@+id/type_text"
         android:orientation="horizontal">
@@ -103,7 +103,7 @@
                 android:layout_height="match_parent"
                 android:text="80 мин"
                 android:gravity="center"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textColor="#fff"
                 android:textStyle="bold"
                 android:textAlignment="center"
@@ -133,7 +133,7 @@
                 android:gravity="center"
                 android:textColor="#fff"
                 android:textAlignment="center"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 android:id="@+id/text_in_image_cost" />
 
@@ -164,20 +164,20 @@
                 android:layout_marginRight="3dp">
 
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
                     android:id="@+id/diff_img_int_img_1"
                     android:src="@drawable/ic_unlocked_no_bg"
                     android:layout_margin="1dp"/>
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
                     android:id="@+id/diff_img_int_img_2"
                     android:src="@drawable/ic_unlocked_no_bg"
                     android:layout_margin="1dp"/>
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
                     android:id="@+id/diff_img_int_img_3"
                     android:src="@drawable/ic_unlocked_no_bg"
                     android:layout_margin="1dp"/>
@@ -193,14 +193,14 @@
                 android:layout_marginBottom="3dp">
 
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
                     android:id="@+id/diff_img_int_img_4"
                     android:src="@drawable/ic_unlocked_no_bg"
                     android:layout_margin="1dp"/>
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
                     android:id="@+id/diff_img_int_img_5"
                     android:src="@drawable/ic_unlocked_no_bg"
                     android:layout_margin="1dp"/>
@@ -225,18 +225,24 @@
         app:layout_constraintLeft_toLeftOf="@+id/quest_image"
         app:layout_constraintTop_toBottomOf="@+id/quest_image"/>
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/condition_text"
-        android:text="Бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-блаБла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-блаБла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла"
-        android:textSize="16sp"
-        android:textColor="#4E4E4E"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="5dp"
+        android:layout_height="170dp"
+        android:id="@+id/scroll_quest"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/condition_title_text"/>
+        app:layout_constraintTop_toBottomOf="@+id/condition_title_text">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/condition_text"
+            android:text="Бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-блаБла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-блаБла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла-бла"
+            android:textSize="16sp"
+            android:textColor="#4E4E4E"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="5dp"/>
+
+    </ScrollView>
 
     <TextView
         android:layout_width="wrap_content"
@@ -249,7 +255,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="15dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/condition_text"/>
+        app:layout_constraintTop_toBottomOf="@+id/scroll_quest"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -311,6 +317,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/bottom_buttons_linear"/>
 
@@ -321,6 +328,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:id="@+id/bottom_buttons_linear"
+        android:layout_margin="10dp"
         android:orientation="horizontal">
 
         <Button
@@ -329,10 +337,9 @@
             android:layout_weight="1"
             android:textColor="#FFF"
             android:background="@color/colorAccent"
-            android:layout_margin="10dp"
             android:text="Изменить"
             android:textStyle="bold"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textAlignment="center"
             android:id="@+id/bottom_update_btn"/>
 
@@ -340,12 +347,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:textColor="#FFF"
             android:background="@color/colorAccent"
-            android:layout_margin="10dp"
             android:text="Купить"
             android:textStyle="bold"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:textAlignment="center"
             android:id="@+id/bottom_buy_btn"/>
 
@@ -355,10 +363,9 @@
             android:layout_weight="1"
             android:textColor="#FFF"
             android:background="@color/colorAccent"
-            android:layout_margin="10dp"
             android:text="Удалить"
             android:textStyle="bold"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textAlignment="center"
             android:id="@+id/bottom_delete_btn"/>
 

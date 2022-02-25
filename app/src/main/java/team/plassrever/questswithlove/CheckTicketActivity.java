@@ -57,10 +57,10 @@ public class CheckTicketActivity extends AppCompatActivity {
 
 
                     StringBuilder sb = new StringBuilder("");
-                    sb.append("CODE: " + cursor.getString(idCode) + "\n");
-                    sb.append("DATE: " + cursor.getString(idDate) + "\n");
-                    sb.append("COST: " + cursor.getInt(idCost) + "\n");
-                    sb.append("QUEST: " + questName);
+                    sb.append("Уникальный код квеста : \t" + cursor.getString(idCode) + "\n");
+                    sb.append("Дата бронирования : \t\t" + cursor.getString(idDate) + "\n");
+                    sb.append("Стоимость : \t\t\t" + cursor.getInt(idCost) + "р.\n");
+                    sb.append("Название квеста : \t\t" + questName);
 
                     resultText.setText(sb.toString());
                 } else {

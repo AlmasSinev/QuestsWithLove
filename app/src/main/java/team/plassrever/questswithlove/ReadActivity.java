@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RadioButton;
@@ -38,6 +39,9 @@ public class ReadActivity extends AppCompatActivity implements View.OnClickListe
     private RadioButton byAgeRadio;
     private RadioButton byDiffRadio;
     private RadioButton byCostRadio;
+
+    private EditText searchEdit;
+    private Button searchBtn;
 
     private String orderBy;
 
@@ -68,6 +72,9 @@ public class ReadActivity extends AppCompatActivity implements View.OnClickListe
         byCostRadio.setOnClickListener(radioListener);
         byDiffRadio.setOnClickListener(radioListener);
 
+        searchEdit = findViewById(R.id.read_search_edit_text);
+        searchBtn = findViewById(R.id.read_search_btn);
+
         SQLiteDatabase database = helperQuests.getWritableDatabase();
 
         questsList = findViewById(R.id.quests_list);
@@ -80,6 +87,37 @@ public class ReadActivity extends AppCompatActivity implements View.OnClickListe
         intervals = new ArrayList<>();
         diffs = new ArrayList<>();
 
+        searchBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (searchEdit.getText().toString().length() > 0) {
+                    List<Quest> questsByName =  helperQuests.getQuestsLikeName(searchEdit.getText().toString());
+                    StringBuilder sb = new StringBuilder("");
+                    for (Quest q : questsByName){
+                        sb.append(q.name + " \n");
+                    }
+                    Toast.makeText(ReadActivity.this, sb.toString(), Toast.LENGTH_SHORT).show();
+//                    List<String> titlesByName = new ArrayList<>();
+//                    List<String> typesByName = new ArrayList<>();
+//                    List<Integer> intervalsByName = new ArrayList<>();
+//                    List<Integer> diffsByName = new ArrayList<>();
+//
+//                    for (Quest q : questsByName) {
+//                        titlesByName.add(q.name);
+//                        typesByName.add(q.type);
+//                        intervalsByName.add(q.interval);
+//                        diffsByName.add(q.difficulty);
+//                    }
+//
+//                    myAdapter = new MyAdapter(ReadActivity.this, titlesByName, typesByName, intervalsByName, diffsByName, imgs);
+//                    questsList.setAdapter(myAdapter);
+
+                } else {
+                    Toast.makeText(ReadActivity.this, "Сначала введите название квеста." , Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
         Intent myIntent = getIntent(); // gets the previously created intent
         String userEmail = myIntent.getStringExtra("userEmail");
         String[] selectionArgs = new String[]{userEmail};
@@ -91,8 +129,6 @@ public class ReadActivity extends AppCompatActivity implements View.OnClickListe
         } else {
             Toast.makeText(ReadActivity.this, userEmail , Toast.LENGTH_LONG).show();
         }
-
-
 
         cursor = database.query(DBHelperUsers.TABLE_QUESTS, null, null,null,null,null, null);
 
@@ -260,7 +296,6 @@ public class ReadActivity extends AppCompatActivity implements View.OnClickListe
             String intervalStr = "Длиельность: " + String.valueOf(rInterval.get(position)) + " мин";
             intervalText.setText(intervalStr);
 
-
             ImageView image1 = row.findViewById(R.id.diff_img_1);
             ImageView image2 = row.findViewById(R.id.diff_img_2);
             ImageView image3 = row.findViewById(R.id.diff_img_3);
@@ -272,7 +307,6 @@ public class ReadActivity extends AppCompatActivity implements View.OnClickListe
             for (int i=0; i< diffs.get(position); i++){
                 diffImages[i].setImageResource(R.mipmap.ic_locked);
             }
-
 
             return row;
         }

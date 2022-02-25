@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".BuyTicketActivity">
 
     <TextView
@@ -11,203 +12,213 @@
         android:layout_height="wrap_content"
         android:text="Покупка билета"
         android:id="@+id/buy_ticket_head"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
         android:textAlignment="gravity"
         android:textStyle="bold"
         android:textColor="#9C27B0"
         android:textSize="35sp"
-        android:fontFamily="sans-serif-black"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:fontFamily="sans-serif-black" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/ticket_title_text"
-        android:text="Билет№:"
-        android:textSize="24sp"
-        android:textColor="#2C2C2C"
-        android:textStyle="bold"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="15dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buy_ticket_head"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/ticket_text"
-        android:text="FN3B2I0D"
-        android:textSize="20sp"
-        android:textColor="#4E4E4E"
-        android:layout_marginLeft="10dp"
-        app:layout_constraintLeft_toRightOf="@+id/ticket_title_text"
-        app:layout_constraintBottom_toBottomOf="@+id/ticket_title_text"
-        app:layout_constraintTop_toTopOf="@+id/ticket_title_text"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/quest_title_text"
-        android:text="Квест:"
-        android:textSize="24sp"
-        android:textColor="#2C2C2C"
-        android:textStyle="bold"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="15dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ticket_title_text"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/quest_text"
-        android:text="Инферно(16+)"
-        android:textSize="20sp"
-        android:textColor="#4E4E4E"
-        android:layout_marginLeft="10dp"
-        app:layout_constraintLeft_toRightOf="@+id/quest_title_text"
-        app:layout_constraintBottom_toBottomOf="@+id/quest_title_text"
-        app:layout_constraintTop_toTopOf="@+id/quest_title_text"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/calendar_title_text"
-        android:text="Выберите дату:"
-        android:textSize="18sp"
-        android:textColor="#2C2C2C"
-        android:textStyle="bold"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="15dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quest_title_text"/>
-
-    <CalendarView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:id="@+id/calendar_view"
-        app:layout_constraintTop_toBottomOf="@+id/calendar_title_text"/>
+        android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/buyer_title_text"
-        android:text="Покупатель:"
-        android:textSize="18sp"
-        android:textColor="#2C2C2C"
-        android:textStyle="bold"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="15dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calendar_view"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/buyer_spinner"
-        android:textSize="20sp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/buyer_title_text"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/method_title_text"
-        android:text="Способ:"
-        android:textSize="18sp"
-        android:textColor="#2C2C2C"
-        android:textStyle="bold"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="15dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buyer_spinner"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ticket_title_text"
+                    android:text="Билет№:"
+                    android:textSize="20sp"
+                    android:textColor="#2C2C2C"
+                    android:textStyle="bold"/>
 
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/method_spinner"
-        android:textSize="20sp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/method_title_text"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ticket_text"
+                    android:text="FN3B2I0D"
+                    android:textSize="18sp"
+                    android:textColor="#4E4E4E"
+                    android:layout_marginLeft="10dp"/>
+            </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/discount_title_text"
-        android:text="Cкидка:"
-        android:textSize="18sp"
-        android:textColor="#2C2C2C"
-        android:textStyle="bold"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="15dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/method_spinner"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
 
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/discount_spinner"
-        android:textSize="20sp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/discount_title_text"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/quest_title_text"
+                    android:text="Квест:"
+                    android:textSize="20sp"
+                    android:textColor="#2C2C2C"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/quest_text"
+                    android:text="Инферно(16+)"
+                    android:textSize="18sp"
+                    android:textColor="#4E4E4E"
+                    android:layout_marginLeft="10dp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/calendar_title_text"
+                android:text="Выберите дату:"
+                android:textSize="20sp"
+                android:textColor="#2C2C2C"
+                android:textStyle="bold"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/quest_title_text"/>
+
+            <CalendarView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:id="@+id/calendar_view"
+                app:layout_constraintTop_toBottomOf="@+id/calendar_title_text"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/buyer_title_text"
+                android:text="Покупатель:"
+                android:textSize="18sp"
+                android:textColor="#2C2C2C"
+                android:textStyle="bold"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/calendar_view"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/buyer_spinner"
+                android:textSize="18sp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/buyer_title_text"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/method_title_text"
+                android:text="Способ оплаты:"
+                android:textSize="18sp"
+                android:textColor="#2C2C2C"
+                android:textStyle="bold"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buyer_spinner"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/method_spinner"
+                android:textSize="18sp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/method_title_text"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/discount_title_text"
+                android:text="Cкидка:"
+                android:textSize="18sp"
+                android:textColor="#2C2C2C"
+                android:textStyle="bold"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/method_spinner"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/discount_spinner"
+                android:textSize="18sp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/discount_title_text"/>
 
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_gravity="right"
+                android:orientation="horizontal">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/final_cost_title_text"
-        android:text="Итого:"
-        android:textSize="18sp"
-        android:textColor="#2C2C2C"
-        android:textStyle="bold"
-        android:layout_marginLeft="10dp"
-        android:layout_marginBottom="15dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/pay_btn"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/final_cost_title_text"
+                    android:text="Итого:"
+                    android:textSize="20sp"
+                    android:textColor="#2C2C2C"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginBottom="15dp"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/final_cost_text"
-        android:text="2500р"
-        android:textSize="16sp"
-        android:textColor="#4E4E4E"
-        android:layout_marginLeft="10dp"
-        app:layout_constraintLeft_toRightOf="@+id/final_cost_title_text"
-        app:layout_constraintBottom_toBottomOf="@+id/final_cost_title_text"
-        app:layout_constraintTop_toTopOf="@+id/final_cost_title_text"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/final_cost_text"
+                    android:text="2500р"
+                    android:textSize="18sp"
+                    android:textColor="#4E4E4E"
+                    android:layout_marginLeft="10dp"/>
 
+            </LinearLayout>
 
-    <Button
-        android:layout_width="380dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="22dp"
-        android:id="@+id/pay_btn"
-        android:text="Оплатить"
-        android:textColor="#ffffff"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:backgroundTint="#9C27B0"
-        android:layout_margin="10dp"
-        android:background="#9C27B0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/pay_btn"
+                android:text="Оплатить"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:backgroundTint="#9C27B0"
+                android:layout_margin="15dp"
+                android:background="#9C27B0"/>
 
-
-
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
