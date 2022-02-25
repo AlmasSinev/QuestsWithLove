@@ -1,13 +1,18 @@
 package team.plassrever.questswithlove;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DBHelperUsers extends SQLiteOpenHelper {
 
     public static final int DATABASE_VERSION = 1;
-    public static final String DATABASE_NAME = "natarina";
+    public static final String DATABASE_NAME = "quests1";
 
     public static final String TABLE_USERS = "users";
     public static final String USER_ID = "user_id";
@@ -142,10 +147,103 @@ public class DBHelperUsers extends SQLiteOpenHelper {
                 + PAYMENT_COST + " integer, "
                 + PAYMENT_DISCOUNT + " integer " + ")");
 
+
+        //db.execSQL();
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
+    }
+
+    public void addQuest(Quest quest){
+        SQLiteDatabase db = this.getReadableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(QUEST_NAME, quest.name);
+        contentValues.put(QUEST_COST, quest.cost);
+        contentValues.put(QUEST_AMOUNT, quest.playerAmount);
+        db.insert(TABLE_QUESTS,null,contentValues);
+        db.close();
+    }
+
+    public Quest getQuestById(int id){
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery("select * from " + TABLE_QUESTS + " where id="+id+"", null);
+
+
+        if(cursor != null)
+            cursor.moveToFirst();
+        Quest quest  = new Quest(
+                Integer.parseInt(cursor.getString(0)),
+                cursor.getString(1),
+                cursor.getString(2),
+                Integer.parseInt(cursor.getString(3)),
+                Integer.parseInt(cursor.getString(4)),
+                cursor.getString(5),
+                Integer.parseInt(cursor.getString(6)),
+                Integer.parseInt(cursor.getString(7)),
+                Integer.parseInt(cursor.getString(8))
+                );
+
+        return quest;
+    }
+
+    public boolean updateQuest(int id, String name, int cost, String amount){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(QUEST_NAME, name);
+        contentValues.put(QUEST_COST, cost);
+        contentValues.put(QUEST_AMOUNT, amount);
+        db.update(TABLE_QUESTS, contentValues, QUEST_ID + " = ? " ,
+                new String[]{String.valueOf(id)});
+
+        return true;
+    }
+
+
+    public void deleteQuestById(Quest quest){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_QUESTS, QUEST_ID + " = ? ",
+                new String[]{String.valueOf(quest.id)});
+        db.close();
+    }
+
+    public List<Quest> getQuestsLikeName(String name){
+        List studentsList = new ArrayList<>();
+        String selectQuery = "SELECT * FROM " + TABLE_QUESTS + " WHERE quest_name LIKE %" + name + "%";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery,null);
+        if(cursor.moveToFirst()){
+            do{
+                Quest quest = new Quest();
+                quest.id = Integer.parseInt(cursor.getString(0));
+                quest.name = cursor.getString(1);
+                quest.type = cursor.getString(2);
+                quest.playerAmount = Integer.parseInt(cursor.getString(3));
+                quest.cost = Integer.parseInt(cursor.getString(4));
+                quest.specification = cursor.getString(5);
+                quest.difficulty = Integer.parseInt(cursor.getString(6));
+                quest.recomentAge = Integer.parseInt(cursor.getString(7));
+                quest.interval = Integer.parseInt(cursor.getString(8));
+                studentsList.add(quest);
+            }while(cursor.moveToNext());
+        }
+        return studentsList;
+    }
+
+
+    public int getQuestsCount() {
+        int count=0;
+        String countQuery = "SELECT  * FROM " + TABLE_QUESTS;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+
+        if(cursor != null && !cursor.isClosed()){
+            count = cursor.getCount();
+            cursor.close();
+        }
+
+        return count;
     }
 }
