@@ -2,7 +2,6 @@ package team.plassrever.questswithlove;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -65,7 +64,7 @@ public class CheckTicketActivity extends AppCompatActivity {
 
                     resultText.setText(sb.toString());
                 } else {
-                    Toast.makeText(CheckTicketActivity.this, "Не найден билет!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(CheckTicketActivity.this, "Билет не найден!", Toast.LENGTH_LONG).show();
                 }
 
             }

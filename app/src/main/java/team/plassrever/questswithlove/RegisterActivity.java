@@ -10,7 +10,6 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,10 +23,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     DBHelperUsers helperUsers;
 
-    private ProgressBar progressBar;
-
     private TextView bannerText;
-
     private Button registerBtn;
 
     @Override
@@ -46,8 +42,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         emailEdit = findViewById(R.id.email_edit);
         phoneNumberEdit = findViewById(R.id.phone_edit);
         passwordEdit = findViewById(R.id.password_edit);
-
-        progressBar = findViewById(R.id.progressbar);
 
         helperUsers = new DBHelperUsers(this);
     }
